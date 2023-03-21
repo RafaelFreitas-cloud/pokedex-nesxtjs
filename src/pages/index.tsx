@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Link from "next/link";
-import { api } from "./services/api";
+import { api } from "../services/api";
 import { PokeContext } from "@/context/PokeContext";
 import { useContext, useEffect, useState } from "react";
 import SearchBar from "@/components/SearchBar";
@@ -62,18 +62,16 @@ export default function Home() {
                 <li key={pokemon.name}>
                   <Link href={`/pokemon/${pokemon.name}`}>
                     <div className="card">
-                      <figure>
-                        <img
-                          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.slice(
-                            34,
-                            -1
-                          )}.png`}
-                          alt={pokemon.name}
-                          width={100}
-                          height={100}
-                        />
-                      </figure>
-                      <h3 >
+                      <img
+                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.slice(
+                          34,
+                          -1
+                        )}.png`}
+                        alt={pokemon.name}
+                        width={100}
+                        height={100}
+                      />
+                      <h3>
                         {pokemon.name[0].toUpperCase() +
                           pokemon.name.substring(1)}
                       </h3>
